@@ -15,7 +15,7 @@ def repo_name(repo_path: str) -> str:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="memorizerepo",
+        prog="memoryrepo",
         description="Build memory for a code repository.",
     )
     parser.add_argument(
@@ -43,4 +43,3 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

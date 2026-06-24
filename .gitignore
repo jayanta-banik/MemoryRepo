@@ -11,6 +11,8 @@ __pycache__/
 build/
 develop-eggs/
 dist/
+!vscode-extension/dist/
+!vscode-extension/dist/**
 downloads/
 eggs/
 .eggs/
@@ -213,6 +215,14 @@ tempCodeRunnerFile.py
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Node / VS Code extension
+node_modules/
+.yarn/cache/
+.yarn/install-state.gz
+.pnp.*
+*.vsix
+vscode-extension/.vscode-test/
 
 # Streamlit
 .streamlit/secrets.toml

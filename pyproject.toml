@@ -3,17 +3,17 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "memorizerepo"
+name = "memoryrepo"
 version = "0.1.0"
 description = "A CLI tool for building memory from JavaScript, Python, and C repositories."
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [
-  { name = "MemorizeRepo contributors" }
+  { name = "MemoryRepo contributors" }
 ]
 
 [project.scripts]
-memorizerepo = "memorizerepo.cli:main"
+memoryrepo = "memoryrepo.cli:main"
 
 [tool.setuptools]
 package-dir = { "" = "src" }
