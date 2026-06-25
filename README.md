@@ -1,6 +1,6 @@
-# ContextMesh
+# MemoryRepo
 
-ContextMesh is a low-latency, session-scoped context-memory provider for LLM applications, coding agents, and agent frameworks.
+MemoryRepo is a low-latency, session-scoped context-memory provider for LLM applications, coding agents, and agent frameworks.
 
 It exposes memory operations through an API and an MCP connector so tools such as VS Code agents, Cursor-style coding assistants, LangChain applications, and custom LLM workflows can store, compact, retrieve, and remove relevant context without repeatedly sending an entire conversation or workspace history to a model.
 
@@ -8,7 +8,7 @@ It exposes memory operations through an API and an MCP connector so tools such a
 
 Agentic applications often resend large context windows on every model call. That increases token cost, latency, and prompt noise.
 
-ContextMesh manages a bounded working-memory layer per user session. It keeps recent and relevant context available for retrieval, returns only the highest-value items for a query, and expires inactive sessions automatically.
+MemoryRepo manages a bounded working-memory layer per user session. It keeps recent and relevant context available for retrieval, returns only the highest-value items for a query, and expires inactive sessions automatically.
 
 ## Product goals
 
@@ -55,7 +55,7 @@ ContextMesh manages a bounded working-memory layer per user session. It keeps re
 
 | Term | Meaning |
 |---|---|
-| User | An authenticated tenant of the ContextMesh service. |
+| User | An authenticated tenant of the MemoryRepo service. |
 | Plan | A database-configured entitlement tier such as Free, Go, Plus, or Premium. |
 | Session | A user-scoped active working-memory container with a sliding inactivity timeout. |
 | Active session | A session that has not expired, has not been disabled, and remains within entitlement limits. |
@@ -64,7 +64,7 @@ ContextMesh manages a bounded working-memory layer per user session. It keeps re
 | Compaction | Reducing redundant or related context items into concise, provenance-preserving summaries. |
 | Hybrid retrieval | Combining dense semantic retrieval with structured or vectorless retrieval signals. |
 | PageIndex | A hierarchical, structure-aware retrieval approach used for long-form documents and larger compacted context trees. |
-| MCP | Model Context Protocol, used to expose ContextMesh as a tool provider for LLM clients and agent frameworks. |
+| MCP | Model Context Protocol, used to expose MemoryRepo as a tool provider for LLM clients and agent frameworks. |
 | Hot path | Latency-sensitive request handling, such as session lookup, context addition, and retrieval. |
 | Async path | Background work such as compaction, indexing, tree rebuilding, and audit persistence. |
 
@@ -77,7 +77,7 @@ MCP Client / LangChain / Application
 API Gateway + Cognito
             |
             v
-ContextMesh API on ECS Fargate
+MemoryRepo API on ECS Fargate
      |                    |
      v                    v
 ElastiCache Valkey    SageMaker inference
